@@ -286,13 +286,31 @@ body {
     color: #fff;
 }
 
-
+.mark-box{
+    display: flex; 
+    justify-content: start;
+    gap: 5px;
+}
 
 .book-wiki {
     padding: 3px 6px;
     color: #fff;
 }
+.mark-btn{
+    width: 20px;
+    height: 20px;
+    background-image: url("/images/bookmark-unchecked.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
+.mark-checked{
+    width: 20px;
+    height: 20px;
+    background-image: url("/images/book-mark-checed.png");
+    background-size: contain;
+    background-repeat: no-repeat; 
+}
 @media only screen and (max-width: 1070px) {
     .search-form-js {
         display: inline-flex;
@@ -300,7 +318,9 @@ body {
         flex-wrap: wrap;
         gap: 10px;
     }
-
+    .mark-box{
+        justify-content: center;
+    }
 
 }
 
