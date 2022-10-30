@@ -12,6 +12,25 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+.search-form-js{
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 900px) {
+    .search-form-js{
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+
+  }
+
+.list-item{
+    width: 100%;
+    max-width: 460px;
+}
 
 .logo-text {
     font-weight: 500;
@@ -109,9 +128,7 @@ body {
     transform-style: preserve-3d;
 }
 .ection-box:hover{
-
     transform: translateX(105%);
-
 }
 .book:hover .front {
     transform: rotateY(-160deg) scale(1.1);
