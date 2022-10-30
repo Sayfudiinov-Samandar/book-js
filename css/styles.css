@@ -1,19 +1,19 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
 }
 
-.container{
+.container {
     width: 100%;
-    max-width: 1800px;
+    max-width: 1900px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.logo-text{
+.logo-text {
     font-weight: 500;
     font-size: 25px;
     line-height: 30px;
@@ -21,151 +21,179 @@ body{
     text-decoration: none;
 }
 
-.book-list{
+.book-list {
     display: inline-flex;
-    gap: 10px;
+    gap: 20px 10px;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .book {
     display: inline-block;
     transform-style: preserve-3d;
     position: relative;
-    width: 230px;
-    height: 300px;
+    width: 200px;
+    height: 280px;
     cursor: pointer;
     backface-visibility: visible;
-  }
-  
-  .front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
+}
+
+.front,
+.back,
+.page1,
+.page2,
+.page3,
+.page4,
+.page5,
+.page6 {
     transform-style: preserve-3d;
     position: absolute;
     width: 200px;
     height: 100%;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     transform-origin: left center;
     transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
-  }
-  
-  .front, .back {
+}
+
+.front,
+.back {
     background-color: #807d7d;
-  }
-  
-  .front, .page1, .page3, .page5 {
+}
+
+.front,
+.page1,
+.page3,
+.page5 {
     border-bottom-right-radius: .5em;
     border-top-right-radius: .5em;
-  }
-  
-  .back, .page2, .page4, .page6 {
+}
+
+.back,
+.page2,
+.page4,
+.page6 {
     border-bottom-right-radius: .5em;
     border-top-right-radius: .5em;
-  }
-  
-  .page1 { 
+}
+
+.page1 {
     background: #efefef;
-  }
-  
-  .page2 {
+}
+
+.page2 {
     background: #efefef;
-  }
-  
-  .page3 {
+}
+
+.page3 {
     background: #f5f5f5;
-  }
-  
-  .page4 {
+}
+
+.page4 {
     background: #f5f5f5;
-  }
-  
-  .page5 {
+}
+
+.page5 {
     background: #fafafa;
-  }
-  
-  .page6 {
+}
+
+.page6 {
     background: #fdfdfd;
-  }
-  
-  .book:hover .front {
+}
+
+.ection-box{
+    position: relative;
+    z-index: 20;
+    transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+    transform-style: preserve-3d;
+}
+.ection-box:hover{
+
+    transform: translateX(105%);
+
+}
+.book:hover .front {
     transform: rotateY(-160deg) scale(1.1);
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
-  }
-  
-  .book:hover .page1 {
+}
+
+.book:hover .page1 {
     transform: rotateY(-150deg) scale(1.1);
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
-  }
-  
-  .book:hover .page2 {
+}
+
+.book:hover .page2 {
     transform: rotateY(-30deg) scale(1.1);
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
-  }
-  
-  .book:hover .page3 {
+}
+
+.book:hover .page3 {
     transform: rotateY(-140deg) scale(1.1);
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
-  }
-  
-  .book:hover .page4 {
+}
+
+.book:hover .page4 {
     transform: rotateY(-40deg) scale(1.1);
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
-  }
-  
-  .book:hover .page5 {
+}
+
+.book:hover .page5 {
     transform: rotateY(-130deg) scale(1.1);
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
-  }
+}
 
-  .book-in-title{
+.book-in-title {
     transform: rotateY(540deg) scale(1.0);
     text-align: center;
-    }
-  
-  .book:hover .page6 {
+}
+
+.book:hover .page6 {
     transform: rotateY(-50deg) scale(1.1);
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
-  }
-  
-  .book:hover .back {
+}
+
+.book:hover .back {
     transform: rotateY(-20deg) scale(1.1);
-  }
+}
 
 
-  .info-box{
-    width: 220px;
-    padding-top: 20px;
-    padding-right: 5px;
-  }
-  .book-title{ 
-      display: block;
-      margin-bottom: 50px;
-      text-align: center;
-      font-size: 20px;
-      line-height: 25px; 
+.info-box {
+    width: 215px;
+    margin-left: 5px;
+    padding: 20px 5px;    
+}
+
+
+.book-title {
+    display: block;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 25px;
     color: #fff;
-  }
+}
 
 
-  .book-year-box{
+.book-year-box {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
     padding-right: 5px;
 }
 
-.book-year-box p{
+.book-year-box p {
     color: #fff;
 }
 
-  .book-year{
+.book-year {
     position: relative;
-    margin-left: 25px;
-  }
+    margin-left: 20px;
+}
 
-  .book-year::before{
+.book-year::before {
     content: "";
-    position: absolute; 
+    position: absolute;
     left: -26px;
     top: 3px;
     background-image: url("/images/calendar.png");
@@ -174,15 +202,16 @@ body{
     width: 20px;
     height: 20px;
 
-  }
-  .book-pages{
-    position: relative;
-    margin-left: 25px;
-  }
+}
 
-  .book-pages::before{
+.book-pages {
+    position: relative;
+    margin-left: 20px;
+}
+
+.book-pages::before {
     content: "";
-    position: absolute; 
+    position: absolute;
     left: -26px;
     top: 3px;
     background-image: url("/images/paper.png");
@@ -191,15 +220,16 @@ body{
     width: 20px;
     height: 20px;
 
-  }
-  .book-language{
-    position: relative;
-    margin-left: 25px;
-  }
+}
 
-  .book-language::before{
+.book-language {
+    position: relative;
+    margin-left: 20px;
+}
+
+.book-language::before {
     content: "";
-    position: absolute; 
+    position: absolute;
     left: -26px;
     top: 3px;
     background-image: url("/images/translation.png");
@@ -207,18 +237,18 @@ body{
     background-repeat: no-repeat;
     width: 20px;
     height: 20px;
-  }
+}
 
-  .book-country{
+.book-country {
     position: relative;
     margin: 0;
-    margin-left: 25px;
+    margin-left: 20px;
     padding: 0;
-  }
+}
 
-  .book-country::before{
+.book-country::before {
     content: "";
-    position: absolute; 
+    position: absolute;
     left: -26px;
     top: 3px;
     background-image: url("/images/pin.png");
@@ -226,22 +256,23 @@ body{
     background-repeat: no-repeat;
     width: 20px;
     height: 20px;
-  }
+}
 
-  .book-info-more{
+.book-info-more {
     margin-top: 50px;
-  }
-  .book-author{
+}
+
+.book-author {
     margin: 0;
     margin-bottom: 20px;
     font-size: 18px;
     line-height: 22px;
     color: #fff;
-  }
+}
 
 
 
-  .book-wiki{
+.book-wiki {
     padding: 3px 6px;
     color: #fff;
-  }
+}
