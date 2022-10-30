@@ -10,6 +10,13 @@ const elSErachAuthorInput=document.querySelector(".input-author-search")
 let elValueAthor
 const elSelectSort=document.querySelector(".sort-by-select");
 
+
+// Create option for language
+const elSelectSortLanguage=document.querySelector(".sort-language");
+let optionFragment=new DocumentFragment();
+
+let allLanguage=[]
+
 function makeList(array) {
     elList.innerHTML=""
     array.forEach(obj => {
@@ -30,7 +37,7 @@ function makeList(array) {
 
 function filletArray(item){
     return books.filter(elm =>{
-        return elm.title.match(item) && elm.author.match(elValueAthor)
+        return elm.title.match(item) && elm.author.match(elValueAthor) && (elSelectSortLanguage.value=="all" || elm.language.includes(elSelectSortLanguage.value))
     })
 }
 
@@ -49,10 +56,37 @@ function sortBY(array, which) {
         array.sort((a,b)=> b.pages- a.pages)
     }else if(which=="few"){
         array.sort((a,b)=> a.pages- b.pages)
+    }else{
+        return 0
     }
+
 
     
 }
+
+function filterlanguage() {
+    books.forEach(item=>{
+        let fewTimeArray=[]
+        fewTimeArray.push(item.language)
+        fewTimeArray.forEach(elm=>{
+            if (!allLanguage.includes(elm)) {
+                allLanguage.push(elm)
+            }
+        })
+    })
+}
+
+function createOption() {
+    allLanguage.forEach(elm=>{
+        let forElOption=document.createElement("option");
+        forElOption.textContent=elm
+        forElOption.value=elm
+        optionFragment.appendChild(forElOption)
+    })
+    elSelectSortLanguage.appendChild(optionFragment)
+}
+
+
 
 
 elFormSearch.addEventListener("submit", evt=>{
@@ -72,5 +106,6 @@ elFormSearch.addEventListener("submit", evt=>{
 
 
 
-
+filterlanguage()
+createOption()
 makeList(books)
