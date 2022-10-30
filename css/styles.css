@@ -12,22 +12,17 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-.search-form-js{
+
+.search-form-js {
     display: flex;
     align-items: center;
 }
-@media only screen and (max-width: 900px) {
-    .search-form-js{
-        display: inline-flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
 
 
-  }
 
-.list-item{
+
+
+.list-item {
     width: 100%;
     max-width: 460px;
 }
@@ -52,7 +47,8 @@ body {
     display: inline-block;
     transform-style: preserve-3d;
     position: relative;
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     height: 280px;
     cursor: pointer;
     backface-visibility: visible;
@@ -121,15 +117,18 @@ body {
     background: #fdfdfd;
 }
 
-.ection-box{
+.ection-box {
     position: relative;
     z-index: 20;
     transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
     transform-style: preserve-3d;
+    width: 100%;
 }
-.ection-box:hover{
+
+.ection-box:hover {
     transform: translateX(105%);
 }
+
 .book:hover .front {
     transform: rotateY(-160deg) scale(1.1);
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
@@ -178,7 +177,7 @@ body {
 .info-box {
     width: 215px;
     margin-left: 5px;
-    padding: 20px 5px;    
+    padding: 20px 5px;
 }
 
 
@@ -292,4 +291,43 @@ body {
 .book-wiki {
     padding: 3px 6px;
     color: #fff;
+}
+
+@media only screen and (max-width: 1070px) {
+    .search-form-js {
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+
+}
+
+@media only screen and (max-width: 575px) {
+    .book-list {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .list-item {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .ection-box:hover {
+        transform: translateX(43%);
+    }
+
+    .front,
+    .back,
+    .page1,
+    .page2,
+    .page3,
+    .page4,
+    .page5,
+    .page6 {
+        left: 16px;
+    }
 }
