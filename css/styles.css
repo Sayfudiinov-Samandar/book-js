@@ -311,6 +311,9 @@ body {
     background-size: contain;
     background-repeat: no-repeat; 
 }
+
+
+
 @media only screen and (max-width: 1070px) {
     .search-form-js {
         display: inline-flex;
