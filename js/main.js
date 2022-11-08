@@ -14,7 +14,7 @@ const elSelectSort = document.querySelector(".sort-by-select");
 // Create option for language
 const elSelectSortLanguage = document.querySelector(".sort-language");
 let optionFragment = new DocumentFragment();
-let allLanguage = []
+let allLanguage =new Set()
 
 
 
@@ -107,9 +107,7 @@ function filterlanguage() {
         let fewTimeArray = []
         fewTimeArray.push(item.language)
         fewTimeArray.forEach(elm => {
-            if (!allLanguage.includes(elm)) {
-                allLanguage.push(elm)
-            }
+            allLanguage.add(elm)
         })
     })
 }
