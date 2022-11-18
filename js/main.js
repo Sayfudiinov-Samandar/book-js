@@ -142,9 +142,9 @@ elFormSearch.addEventListener("submit", evt => {
 
 let tokken = localStorage.getItem("token")
 
-if (!tokken) {
-    location.replace("login.html")
-}
+// if (!tokken) {
+//     location.replace("login.html")
+// }
 
 setTimeout(()=>{
 localStorage.removeItem("token")
